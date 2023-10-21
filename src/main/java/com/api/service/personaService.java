@@ -1,8 +1,10 @@
 package com.api.service;
 
-import com.api.bo.Persona;
+import org.model.Persona;
+
+import java.util.List;
 
 public interface personaService {
 
-    public Persona getPersonna(long id);
+    public List<Persona> getPersonas();
 }

@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: Persona - OpenAPI 3.0
+  description: |-
+    Persona API Spec
+  version: 0.0.2
+servers:
+  - url: api/v1
+paths:
+  /persona:
+    post:
+      tags:
+        - persona
+      summary: Add a new persona
+      description: Add a new persona
+      operationId: addPersona
+      requestBody:
+        description: Create a new persona
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Persona'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid request
+    get:
+      tags:
+        - persona
+      summary: Get all personas
+      description: Get all personas
+      operationId: getPersonas
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Persona'
+        '400':
+          description: Invalid request
+components:
+  schemas:
+    Persona:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        nom:
+          type: string
+          example: John
+        prenom:
+          type: string
+          example: John
+        adresse:
+          type: string
+          example: John
+        numTel:
+          type: string
+          example: John
+        diplome:
+          type: string
+          example: John
+        intituleDiplome:
+          type: string
+          example: John
